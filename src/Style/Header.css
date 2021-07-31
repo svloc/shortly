@@ -59,5 +59,8 @@ text-align: left;
 }
 @media screen and (min-width: 460px){
 .header-container img {
-    width: 100%;}}
+    width: 100%;}
+    
+  
+  }
 
