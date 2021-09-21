@@ -1,46 +1,32 @@
 .contact{
     text-align: center;
-    padding-top: 3rem;
     color: #f9f9f9;
   }
   .Contact-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color:#282828;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+   background-color:#282828;
   }
   .card-body {
-    flex: 1 1 auto;
     padding: 3rem 2rem!important;
   }
   .contact-h{
     padding-bottom: 2rem;
   }
   .Contact-btn {
-    display: inline-block;
-    font-weight: 400;
-    line-height: 2;
-    color: #000 !important;
     text-align: center;
     text-decoration: none;
-    vertical-align: middle;
+    color: #ffff;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    background-color: #D3D3D3;
+    background-color: #000;
     border: 1px solid transparent;
-    padding: .375rem .75rem;
+    padding: 0.75rem 1em;
     font-size: 1rem;
     border-radius: .30rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
   .Contact-btn:hover{
     color:#000!important;
-    background-color:#F08080!important;
+    background-color:#fff!important;
   }

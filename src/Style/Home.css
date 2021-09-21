@@ -30,6 +30,9 @@
         border: none;
         position: relative;
     }
+    .input-search:focus-visible{
+      outline: 0;
+    }
     .btn-home {
       display: inline-block;
       font-weight: 400;

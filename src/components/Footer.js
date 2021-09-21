@@ -1,5 +1,5 @@
-import React from 'react';
-import '../Style/Footer.css';
+import React from "react";
+import "../Style/Footer.css";
 export default function Footer() {
   return (
     <>
@@ -38,37 +38,19 @@ export default function Footer() {
           </div>
 
           <div className="col-md-3 col-12">
-            <a
-              className="btn btn-outline-light btn-floating m-2"
-         
-              role="button"
-            >
-             <img src="https://img.icons8.com/metro/26/000000/facebook.png"/>
-           
+            <a className="btn btn-outline-light btn-floating m-2" role="button">
+              <i className="fab fa-linkedin-in"></i>
             </a>
-            <a
-              className="btn btn-outline-light btn-floating m-2"
-              
-              role="button"
-            >
-               <img src="https://image.flaticon.com/icons/png/128/160/160194.png" style={{width: '20px', height: '24px'}} />
-            </a>
-        
-            <a
-              className="btn btn-outline-light btn-floating m-2"
-            
-              role="button"
-            >
-    
-              <img src="https://image.flaticon.com/icons/png/128/80/80648.png" style={{width: '20px', height: '24px'}} />
+            <a className="btn btn-outline-light btn-floating m-2" role="button">
+            <i className="fab fa-twitter-square"></i>
             </a>
 
-            <a
-              className="btn btn-outline-light btn-floating m-2"
-              
-              role="button"
-            >
-            <img src="https://image.flaticon.com/icons/png/128/1384/1384031.png" style={{width: '20px', height: '24px'}} />
+            <a className="btn btn-outline-light btn-floating m-2" role="button">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+
+            <a className="btn btn-outline-light btn-floating m-2" role="button">
+              <i className="fab fa-instagram"></i>
             </a>
           </div>
         </div>

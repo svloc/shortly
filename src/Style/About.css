@@ -3,10 +3,9 @@
       color: #222125;
       line-height: 1.2;
       margin-bottom: 1rem;
-      margin-top: 1rem;
+     
       text-align: center;
       font-size: 1.75rem;
-      padding-top: 4rem;
   }
   .about-text{
     margin-bottom: 5rem;
@@ -60,17 +59,16 @@
       width: 32%;
     }
     .about-card-group{
-      max-width: 1200px;
-      margin: 90px 50px 50px 50px;
-      display: flex;
+      max-width: 1143px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-around;
     }
     .about-card {
-      margin: 0;
+      width: 30%;;
       align-items: flex-start;
-      padding: 1rem 2rem;
-  }
-  .about-card:not(:last-child) {
-    margin-right: 2rem;
+      padding: 1em 2em;
   }
   .about-card-text{
     width: 100%;
@@ -83,6 +81,3 @@
   }
   }
   
-  @media (min-width: 768px){
-  
-  }

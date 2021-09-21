@@ -7,6 +7,9 @@
     margin: 0 auto;
 
 }
+.header-img img{
+  width: 100%;
+}
 .header-title{
   font-weight: 700;
     color: #35323e;
@@ -55,6 +58,7 @@ text-align: left;
 }
 .header-text{
   margin: 0 0 1.5rem 0;
+  font-size: 1.2rem;
 }
 }
 @media screen and (min-width: 460px){

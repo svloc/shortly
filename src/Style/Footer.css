@@ -10,14 +10,14 @@
     line-height: 1.5;
       font-size: 1.3rem;
   }
+  .shortlyH1{
+    font-size: 3.4rem;
+    font-family: 'Circular-Loom';
+  }
   @media(min-width:540px){
     .footer{
       text-align: left!important;
     }
-    .shortlyH1{
-      padding-top: 2rem;
-    }
-    
   }
   @media screen and (min-width: 460px){
     .footer{
@@ -50,25 +50,31 @@
   }
   @media (min-width: 768px){
   .col-md-3 {
-      flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
       width: 25%;
   }
   .col-md-2 {
       flex: 0 0 auto;
       width: 16.66666667%;
   }
-  .shortlyH1{
-    padding-left:2rem;
-  }
   }
   .list-unstyled {
     padding-left: 0;
     list-style: none;
     display: list-item;
-    color: #FFFFE0;
+    color: #FFF;
     opacity: 0.5;
+    font-size: 0.95rem;
+    line-height: 1.8;
   }
-  
+  .list-unstyled li:hover{
+    opacity: 1 !important;
+    color: #fff;
+    cursor: pointer;
+  }
   
   .btn {
     display: inline-block;

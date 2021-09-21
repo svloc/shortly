@@ -8,7 +8,7 @@
   }
   
   .logo {
-    font-size: 33px;
+    font-size: 3rem;
     font-weight: 700;
     cursor :pointer;
     color:#2F4F4F;
@@ -19,7 +19,7 @@
     list-style: none;
     width: 75%;
     color: #9e9aa7;
-    font-size:1.3rem;
+    font-size: 1.2rem;
     
   }
   
@@ -37,8 +37,9 @@
   .signup {
     border:none;
     background-color: #2acfcf;
-    border-radius:1rem;
+    border-radius:3rem;
     color: #fff !important;
+    padding: 0.45em 1.5em;
   }
   .mobile-menu-icon {
     display: none;
@@ -48,7 +49,6 @@
     .logo {
       display: flex;
       position: absolute;
-      top: 15px;
       left: 15px;
       color: #000;
     }
@@ -58,13 +58,11 @@
       display: block;
       list-style: none;
       background-color:#3b3054; 
-      left: 18px;
       height: 18rem;
       top: 75px;
       transition: all 0.5s ease-out;
-      width: 90%;
+      width: 100%;
       padding-top: 1rem;
-      padding-right: 3rem;
       border-radius: 1.5rem;
       
     }
@@ -74,17 +72,15 @@
     .login,
     .signup {
       color: #fff;
-      text-align: center;
-      padding: 10px;
-      font-size: 20px;
+      font-size: 1.1rem;
       width: 100%;
       transition: all 0.5s ease;
     }
-    .signup{
+    /* .signup{
       border:none;
       background-color: #2acfcf;
       border-radius:1rem;
-    }
+    } */
     .resource{
       border-bottom:1px solid #fff;
       

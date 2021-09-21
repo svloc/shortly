@@ -9,6 +9,7 @@ export default function Home() {
   const [shareLink, setShareLink] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copy,setCopy]=useState("COPY");
   const HTTP_URL_VALIDATOR_REGEX = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
 
   const handleSubmit = e => {
@@ -78,7 +79,7 @@ export default function Home() {
               <p className="input-search short-link">{short}</p>
             </div>
             <CopyToClipboard text={short} onCopy={() => setCopied(true)}>
-              <button className="btn-home btn-outline-light " >Copy</button>
+              <button className="btn-home btn-outline-light " >copy</button>
             </CopyToClipboard>
           </form>
           </div>
@@ -90,7 +91,7 @@ export default function Home() {
               <p className="short-link input-search">{shortLink2}</p>
             </div>
             <CopyToClipboard text={shortLink2} onCopy={() => setCopied(true)}>
-              <button className="btn-home btn-outline-light">Copy</button>
+              <button className="btn-home btn-outline-light">copy </button>
             </CopyToClipboard>
           </form>
           </div>
@@ -102,7 +103,7 @@ export default function Home() {
               <p className="short-link input-search">{shareLink}</p>
             </div>
              <CopyToClipboard text={shareLink} onCopy={() => setCopied(true)}>
-              <button className="btn-home btn-outline-light ">Copy</button>
+              <button className="btn-home btn-outline-light " >copy </button>
             </CopyToClipboard>
           </form>
           </div>
