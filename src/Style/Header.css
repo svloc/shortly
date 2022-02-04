@@ -1,10 +1,10 @@
 .header-container{
-  
-    overflow: hidden;
+   overflow: hidden;
     padding: 1rem;
     text-align: center;
     max-width: 30rem;
     margin: 0 auto;
+    margin-top: 3rem;
 
 }
 .header-img img{
@@ -26,19 +26,17 @@
     text-align: center;
 }
 .header-button{
-  border: none;
     background-color: #2acfcf;
-    font-weight: 700;
     color: #ffffff;
-    font-size: 1.25rem;
-    border-radius: 20px;
-    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    padding: 0.65em 2em;
+    border: 1px solid #2acfcf;
+    font-size: 1rem;
 }
 
 @media screen and (min-width: 820px){
 .header-container {
     max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     padding: 2rem;
@@ -49,6 +47,7 @@
 }
 .header-content{
 text-align: left;
+width: 58%;
 }
 .header-title,.header-text{
 text-align: left;

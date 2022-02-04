@@ -42,7 +42,7 @@ export default function Footer() {
               <i className="fab fa-linkedin-in"></i>
             </a>
             <a className="btn btn-outline-light btn-floating m-2" role="button">
-            <i className="fab fa-twitter-square"></i>
+            <i className="fab fa-twitter"></i>
             </a>
 
             <a className="btn btn-outline-light btn-floating m-2" role="button">
@@ -54,6 +54,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
+     
       </footer>
     </>
   );

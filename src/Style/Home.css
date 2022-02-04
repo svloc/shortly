@@ -1,8 +1,8 @@
 .home-container{
-    margin-top: 5rem;
-    }
-    
-    .short-link-out{
+  margin: 2rem auto;
+  width: 90%;
+  }
+ .short-link-out{
       margin:2rem;
     }
     form {
@@ -11,9 +11,8 @@
       background-position: top right;
       display: flex;
       flex-direction: column;
-      border-radius: 7px;
+      border-radius: 5px;
       margin-bottom: 1rem;
-      transform: translateY(-4rem);
       max-width: 40rem;
       margin: 0 auto;
     
@@ -25,8 +24,8 @@
     .input-search{
       font-size: 1rem;
         width: 100%;
-        padding: 1rem 0.5rem;
-        border-radius: 7px;
+        padding: 10px;
+        border-radius: 5px;
         border: none;
         position: relative;
     }
@@ -36,7 +35,6 @@
     .btn-home {
       display: inline-block;
       font-weight: 400;
-      line-height: 2;
       color: #212529;
       text-align: center;
       text-decoration: none;
@@ -47,7 +45,7 @@
       user-select: none;
       background-color: transparent;
       border: 1px solid transparent;
-      padding: .375rem .75rem;
+      padding:10px;
       font-size: 1rem;
       border-radius: .25rem;
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -69,23 +67,22 @@
         margin: 0 auto;
         flex-direction: row;
         align-items: center;
-        padding: 3rem;
+        justify-content: center;
+        padding: 2rem
     }
     .input-group{
-      width: 80%;
+        width: 90%;
         margin-bottom: 0;
     }
     .input-search{
-      width: 90%;
+      width: 95%;
         margin-bottom: 0;
         margin-right: auto;
     }
     .short-link{
       width:100%;
     }
-    .btn-outline-light{
-      margin:1rem;
-    }
+    
     }
     
     .homecard{
@@ -101,10 +98,10 @@
     .short-link{
       display: block;
       width: 100%;
-      padding: .6rem .8rem;
+      margin: 0 !important;
       font-size: 1rem;
       font-weight: 400;
-      line-height: 2;
+     padding: 6px;
       color: #212529;
       background-color: #fff;
       background-clip: padding-box;
@@ -114,4 +111,7 @@
       appearance: none;
       border-radius: .25rem;
       transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .short-form{
+      justify-content: space-between;
     }

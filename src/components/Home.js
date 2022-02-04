@@ -74,7 +74,7 @@ export default function Home() {
 
         {short && (
           <div className="short-link-out">
-          <form onSubmit={e => handleOutLink(e)}>
+          <form onSubmit={e => handleOutLink(e)} className='short-form'>
             <div className="input-group">
               <p className="input-search short-link">{short}</p>
             </div>
@@ -82,11 +82,11 @@ export default function Home() {
               <button className="btn-home btn-outline-light " >copy</button>
             </CopyToClipboard>
           </form>
-          </div>
+          </div> 
         )}
         {shortLink2 && (
           <div className="short-link-out">
-          <form onSubmit={e => handleOutLink(e)}>
+          <form onSubmit={e => handleOutLink(e)} className='short-form'>
             <div className="input-group">
               <p className="short-link input-search">{shortLink2}</p>
             </div>
@@ -97,8 +97,8 @@ export default function Home() {
           </div>
         )}
         {shareLink && (
-           <div className="short-link-out">
-          <form onSubmit={e => handleOutLink(e)}>
+           <div className="short-link-out" >
+          <form onSubmit={e => handleOutLink(e)} className='short-form'>
             <div className="input-group ">
               <p className="short-link input-search">{shareLink}</p>
             </div>
