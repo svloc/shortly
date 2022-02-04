@@ -3,22 +3,30 @@ import ShortCode from '../Api/ShortCode';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import '../Style/Home.css';
 export default function Home() {
+ 
+  const[status,setStatus]=useState(false);
   const [Link, setLink] = useState('');
-  const [short, setShort] = useState('');
-  const [shortLink2, setShortLink2] = useState('');
-  const [shareLink, setShareLink] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const [copy,setCopy]=useState("COPY");
+  const[c1,setC1]=useState(true);
+  const[c2,setC2]=useState(true);
+  const[c3,setC3]=useState(true);
+  const[shortUrl, setShortUrl] = useState([]);
+  const[isLoading, setIsLoading] = useState(false);
+  const[errorText,setErrorText]=useState('');
   const HTTP_URL_VALIDATOR_REGEX = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
-
+  
   const handleSubmit = e => {
     e.preventDefault();
-    if (checkLink(Link)) {
+    if(Link==''){
+      setErrorText('Please Enter the Url')
+    }
+    if(checkLink(Link)) {
       setLink('');
       getLink();
       setLink('');
       setIsLoading(!isLoading);
+    }
+    else{
+      setErrorText('Please Enter Valid Url')
     }
   };
   const checkLink = string => {
@@ -27,87 +35,103 @@ export default function Home() {
   };
 
   const getLink = async () => {
-    await ShortCode.get(`shorten?url=${Link}`)
-      .then(res => {
-        setShort(res.data.result.short_link);
-        setShortLink2(res.data.result.short_link2);
-        setShareLink(res.data.result.share_link);
-      })
-      .catch(error => {
+    await ShortCode.get(`shorten?url=${Link}`).then(res => {
+      if(res.data.ok){
+        setShortUrl(res.data.result)
+        setStatus(true);
+        setIsLoading(false);
+      } 
+      else{
+        setStatus(false);
+      }
+      }).catch(error => {
         console.error(error);
+        setStatus(false);
+        setIsLoading(true);
       });
-    setIsLoading(false);
+    
   };
+
   const handleOutLink = e => {
     e.preventDefault();
   };
+
+  const on_copy=(text)=>{
+    switch(text) {
+      case 'copy1':
+       setC1(false);
+       setC2(true);
+       setC3(true);
+       break;
+      case 'copy2':
+       setC1(true);
+       setC2(false);
+       setC3(true);
+       break;
+      case 'copy3':
+      setC1(true);
+      setC2(true);
+      setC3(false);
+      break;  
+    
+    }
+  
+  }
+
   return (
     <>
       <div className="home-container">
         <form onSubmit={e => handleSubmit(e)}>
           <div className="input-group">
-            <input
-              onChange={e => setLink(e.target.value)}
-              value={Link}
-              type="text"
-              className="input-search"
-              placeholder="Shorten a link here.."
-            />
+            <input onChange={e => setLink(e.target.value)} value={Link} type="text" className="input-search"
+              placeholder="Shorten a link here.." />
+              {errorText && <small className='error-msg'>{errorText}</small>}
           </div>
-          {!isLoading && (
-            <button
-              onClick={e => handleSubmit(e)}
-              className="btn-home btn-outline-light"
-            >
-              Shorten-it!
-            </button>
-          )}
-          {isLoading && (
-            <button
-              onClick={e => handleSubmit(e)}
-              className="btn-home btn-outline-light"
-            >
-              Generating..
-            </button>
-          )}
+           <button onClick={e => handleSubmit(e)} className="btn-home btn-outline-light">
+          {isLoading ?<div class="sk-chase"><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div><div class="sk-chase-dot"></div>
+               </div> :<span> Shorten It!</span> }</button>
         </form>
 
-        {short && (
+        {status &&
+          <>
           <div className="short-link-out">
           <form onSubmit={e => handleOutLink(e)} className='short-form'>
             <div className="input-group">
-              <p className="input-search short-link">{short}</p>
+              <p className="input-search short-link">{shortUrl.short_link}</p> 
             </div>
-            <CopyToClipboard text={short} onCopy={() => setCopied(true)}>
-              <button className="btn-home btn-outline-light " >copy</button>
+            <CopyToClipboard text={shortUrl.short_link}>
+              <button className="btn-home btn-outline-light" onClick={()=>on_copy('copy1')}>
+             {c1 ?<span>Copy</span>:<span>Copied</span>} </button>
             </CopyToClipboard>
           </form>
-          </div> 
-        )}
-        {shortLink2 && (
+         </div> 
+        
+       
           <div className="short-link-out">
           <form onSubmit={e => handleOutLink(e)} className='short-form'>
             <div className="input-group">
-              <p className="short-link input-search">{shortLink2}</p>
+              <p className="short-link input-search">{shortUrl.short_link2}</p>
             </div>
-            <CopyToClipboard text={shortLink2} onCopy={() => setCopied(true)}>
-              <button className="btn-home btn-outline-light">copy </button>
+            <CopyToClipboard text={shortUrl.short_link}>
+              <button className="btn-home btn-outline-light" onClick={()=>on_copy('copy2')}>
+                {c2 ?<span>Copy</span>:<span>Copied</span>}</button>
             </CopyToClipboard>
           </form>
           </div>
-        )}
-        {shareLink && (
+    
+       
            <div className="short-link-out" >
           <form onSubmit={e => handleOutLink(e)} className='short-form'>
             <div className="input-group ">
-              <p className="short-link input-search">{shareLink}</p>
+              <p className="short-link input-search">{shortUrl.short_link3}</p>
             </div>
-             <CopyToClipboard text={shareLink} onCopy={() => setCopied(true)}>
-              <button className="btn-home btn-outline-light " >copy </button>
+             <CopyToClipboard text={shortUrl.short_link} >
+              <button className="btn-home btn-outline-light" onClick={()=>on_copy('copy3')}>
+                {c3 ?<span>Copy</span>:<span>Copied</span>} </button>
             </CopyToClipboard>
           </form>
-          </div>
-        )}
+          </div> 
+          </>}
       </div>
     </>
   );
